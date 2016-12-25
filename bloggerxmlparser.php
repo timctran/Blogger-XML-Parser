@@ -1,4 +1,7 @@
 <?php
+// Bypass Memory Limit
+$old = ini_set('memory_limit', '8192M'); 
+
 /*
 The MIT License (MIT)
 Copyright (c) [2015] [sukualam]
@@ -42,7 +45,7 @@ $term = 'http://schemas.google.com/blogger/2008/kind#post';
  
 foreach($dec['entry'] as $id => $content){
 	// if($content['category'][0]['@attributes']['term'] == $term){
-	if(substr_count($content['title'], 'Food'){
+	if(substr_count($content['title'], 'Food')){
 		$link = $content['link'][4]['href'];
 		array_shift($content['category']);
 		foreach($content['category'] as $keys => $tag){
