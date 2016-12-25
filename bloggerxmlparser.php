@@ -21,7 +21,7 @@ SOFTWARE.
 
 
 // Path to Blogger Backup Blog Filename (.xml)
-$filename = 'blog.xml';
+$filename = 'blog-12-25-2016.xml';
 
 // parse the heck out to mixed array and object...
 $parse = simplexml_load_file($filename);
@@ -41,7 +41,8 @@ $term = 'http://schemas.google.com/blogger/2008/kind#post';
  */
  
 foreach($dec['entry'] as $id => $content){
-	if($content['category'][0]['@attributes']['term'] == $term){
+	// if($content['category'][0]['@attributes']['term'] == $term){
+	if(substr_count($content['title'], 'Food'){
 		$link = $content['link'][4]['href'];
 		array_shift($content['category']);
 		foreach($content['category'] as $keys => $tag){
